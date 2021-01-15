@@ -38,11 +38,11 @@ function islamicFinderAdhan(res: string) {
 }
 
 app.get("/", (req, res) => {
-  res.send("Kiosk App Running");
+  res.send("Prayer Clock Server Running");
 });
 
 app.get("/bayonne-if", (req, res) => {
-  let atimes = islamicFinderAdhan(fs.readFileSync("./adhan.html", "utf8"));
+  let atimes = islamicFinderAdhan(fs.readFileSync("/home/ubuntu/prayer-clock-server/adhan.html", "utf8"));
   res.send(atimes);
 });
 

@@ -51,6 +51,11 @@ app.get("/newark-if", (req, res) => {
   res.send(atimes);
 });
 
+app.get("/midland_park-if", (req, res) => {
+  let atimes = islamicFinderAdhan(fs.readFileSync("/home/ubuntu/prayer-clock-server/adhan-midland_park.html", "utf8"));
+  res.send(atimes);
+});
+
 app.listen(port, host, () => {
   console.log(`App listening at http://${host}:${port}`);
 });

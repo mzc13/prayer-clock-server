@@ -42,7 +42,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/bayonne-if", (req, res) => {
-  let atimes = islamicFinderAdhan(fs.readFileSync("/home/ubuntu/prayer-clock-server/adhan.html", "utf8"));
+  let atimes = islamicFinderAdhan(fs.readFileSync("/home/ubuntu/prayer-clock-server/adhan-bayonne.html", "utf8"));
+  res.send(atimes);
+});
+
+app.get("/newark-if", (req, res) => {
+  let atimes = islamicFinderAdhan(fs.readFileSync("/home/ubuntu/prayer-clock-server/adhan-newark.html", "utf8"));
   res.send(atimes);
 });
 
